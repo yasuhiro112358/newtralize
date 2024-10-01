@@ -14,10 +14,13 @@
 
 <body class="font-sans antialiased">
     {{-- <div class="min-h-screen bg-gray-100 dark:bg-gray-900"> --}}
-    <div class="min-h-screen bg-gray-100">
+    {{-- <div class="min-h-screen bg-gray-100"> --}}
+    <div class="flex flex-col min-h-screen bg-gray-100">
+        {{-- Navigation --}}
+        @include('layouts.navigation')
 
         <!-- Content -->
-        <main>
+        <main class="flex-grow">
             @yield('content')
         </main>
 
