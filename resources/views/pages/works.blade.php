@@ -2,99 +2,83 @@
 
 @section('content')
     <!-- Main contents -->
-    <div class="container mx-auto mb-4 mt-4">
-        <!-- Portfolio -->
-        <div class="mb-4">
-            <div class="heading">
-                <h1 class="text-3xl font-bold">Portfolio</h1>
-                <hr class="border-3 border-gray-800 mt-2">
-            </div>
-        </div>
-
-        <!-- Contents -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-            <!-- Portfolio Blog -->
-            <div class="col-span-1">
-                <div class="card border-2" id="portfolio-3">
-                    <img class="w-full border" src="{{ asset('images/portfolio-blog.png') }}" alt="">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">Blog System</h3>
-                        <h4 class="text-sm mb-3 text-gray-500">Web App, Responsive Design</h4>
-                        <p class="mb-2">
-                            <span class="font-bold">Related Skills</span>: PHP, CRUD, mysqli, password_hash(), SQL, MySQL,
-                            MAMP, HTML/CSS,
-                            Tailwind CSS, Responsive Design
-                        </p>
-                        <p class="mb-4">
-                            <span class="font-bold">Note</span>:<br>
-                            Feel free to touch it!<br>
-                            [Username]: admin, [Password]: admin<br>
-                            You can create your own account as well!
-                        </p>
-                        <a href="https://nabeyasu.com/portfolio-blog/" target="_blank"
-                            class="block bg-black text-white text-center py-2 rounded">Check it</a>
+    <div class="container max-w-screen-lg mx-auto px-4 py-8 lg:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            <!-- Left column -->
+            <div class="lg:col-span-3">
+                <!-- Portfolio heading-->
+                <div class="mb-4">
+                    <div class="heading">
+                        <h1 class="text-3xl font-bold border-b-2 border-blue-950">Works</h1>
                     </div>
+                </div>
+
+                <!-- Portfolio Items -->
+                <div class="grid grid-cols-1 gap-6 overflow-y-auto md:grid-cols-2 lg:grid-cols-2" style="max-height: 70vh;">
+                    @php
+                        $portfolioItems = [
+                            [
+                                'id' => 'portfolio-3',
+                                'image' => 'images/portfolio-blog.png',
+                                'title' => 'Blog System',
+                                'description' => 'Web App, Responsive Design',
+                                'skills' =>
+                                    'PHP, CRUD, mysqli, password_hash(), SQL, MySQL, MAMP, HTML/CSS, Tailwind CSS, Responsive Design',
+                                'note' =>
+                                    "Feel free to touch it!\n[Username]: admin, [Password]: admin\nYou can create your own account as well!",
+                                'link' => 'https://nabeyasu.com/portfolio-blog/',
+                            ],
+                            [
+                                'id' => 'portfolio-4',
+                                'image' => 'images/show-seismic-wave.png',
+                                'title' => 'Calculation API',
+                                'description' => 'Web API, Calculation for Architectural Structure, Developing',
+                                'skills' =>
+                                    'Python, flask, pandas, REST API, PHP, MAMP, Docker, Heroku, JavaScript, Chart.js, HTML/CSS, Tailwind CSS',
+                                'note' => "Heroku for API server\nXserver for Web server",
+                                'link' => 'https://nabeyasu.com/architectual-structural-analysis/',
+                            ],
+                            [
+                                'id' => 'portfolio-2',
+                                'image' => 'images/coffee-bean.png',
+                                'title' => 'Retail Website',
+                                'description' => 'Web Page, Responsive Design',
+                                'skills' => 'HTML/CSS, Tailwind CSS, Responsive Design',
+                                'note' => '',
+                                'link' => 'https://nabeyasu.com/portfolio-coffee-bean/',
+                            ],
+                            [
+                                'id' => 'portfolio-1',
+                                'image' => 'images/github-page.png',
+                                'title' => 'GitHub Pages',
+                                'description' => 'Web Pages, Responsive Design',
+                                'skills' => 'HTML/CSS, JavaScript, Responsive Design, Git, GitHub',
+                                'note' => '',
+                                'link' => '/index.html',
+                            ],
+                            [
+                                'id' => 'portfolio-sample',
+                                'image' => '',
+                                'title' => 'Sample',
+                                'description' => 'Web Pages, Responsive Design',
+                                'skills' => 'HTML/CSS, JavaScript, Responsive Design, Git, GitHub',
+                                'note' => '',
+                                'link' => '',
+                            ],
+                        ];
+                    @endphp
+
+                    @foreach ($portfolioItems as $item)
+                        <x-portfolio-item :id="$item['id']" :image="$item['image']" :title="$item['title']" :description="$item['description']"
+                            :skills="$item['skills']" :note="$item['note']" :link="$item['link']" />
+                    @endforeach
                 </div>
             </div>
 
-            <!-- Structural Analysis -->
-            <div class="col-span-1">
-                <div class="card border-2" id="portfolio-4">
-                    <img class="w-full border" src="{{ asset('images/show-seismic-wave.png') }}" alt="">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">Calculation API</h3>
-                        <h4 class="text-sm mb-3 text-gray-500">Web API, Calculation for Architectural Structure, Developing
-                        </h4>
-                        <p class="mb-2">
-                            <span class="font-bold">Related Skills</span>: Python, flask, pandas, REST API, PHP, MAMP, Docker,
-                            Heroku, JavaScript, Chart.js, HTML/CSS, Tailwind CSS
-                        </p>
-                        <p class="mb-4">
-                            <span class="font-bold">Note</span>:<br>
-                            Heroku for API server<br>
-                            Xserver for Web server
-                        </p>
-                        <a href="https://nabeyasu.com/architectual-structural-analysis/" target="_blank"
-                            class="block bg-black text-white text-center py-2 rounded">Check it</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Retail Website -->
-            <div class="col-span-1">
-                <div class="card border-2" id="portfolio-2">
-                    <img class="w-full border" src="{{ asset('images/coffee-bean.png') }}" alt="">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">Retail Website</h3>
-                        <h4 class="text-sm mb-3 text-gray-500">
-                            Web Page, Responsive Design
-                        </h4>
-                        <p class="mb-4">
-                            <span class="font-bold">Related Skills</span>: HTML/CSS, Tailwind CSS, Responsive Design
-                        </p>
-                        <a href="https://nabeyasu.com/portfolio-coffee-bean/" target="_blank"
-                            class="block bg-black text-white text-center py-2 rounded">
-                            Check it
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GitHub Pages -->
-            <div class="col-span-1">
-                <div class="card border-2" id="portfolio-1">
-                    <img class="w-full border" src="{{ asset('images/github-page.png') }}" alt="">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">GitHub Pages</h3>
-                        <h4 class="text-sm mb-3 text-gray-500">Web Pages, Responsive Design</h4>
-                        <p class="mb-4">
-                            <span class="font-bold">Related Skills</span>: HTML/CSS, JavaScript, Responsive Design, Git,
-                            GitHub
-                        </p>
-                        <a href="/index.html" target="_blank" class="block bg-black text-white text-center py-2 rounded">Check it</a>
-                    </div>
-                </div>
+            <!-- Right column -->
+            <div class="lg:sticky lg:top-16">
+                <x-profile-card name="Yasuhiro W" description="Brief introduction about yourself."
+                    image="images/hiro.jpg" />
             </div>
         </div>
     </div>
