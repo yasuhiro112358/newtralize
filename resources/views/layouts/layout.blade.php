@@ -20,7 +20,7 @@
         @include('layouts.navigation')
 
         <!-- Content -->
-        <main class="flex-grow pt-16">
+        <main class="flex-grow pt-12">
             @yield('content')
         </main>
 
