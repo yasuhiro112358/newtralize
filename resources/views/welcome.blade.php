@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="w-full h-full relative" id="p5-container">
+    <div class="w-full h-screen-minus-96 relative" id="p5-container">
         <div class="absolute top-1/2 left-1/2 transform  -translate-x-1/2">
             {{-- Works button --}}
             <a href="{{ route('works') }}"
