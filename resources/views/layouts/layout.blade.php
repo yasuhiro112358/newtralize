@@ -27,6 +27,9 @@
         {{-- Footer --}}
         <x-footer />
     </div>
+
+    <!-- Scripts -->
+    @stack('script')
 </body>
 
 </html>
