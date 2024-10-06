@@ -23,3 +23,15 @@ php artisan route:cache
 php artisan view:cache
 php artisan cache:clear
 ```
+
+```bash
+php artisan make:component Footer 
+# Create a new component class and view
+# app/View/Components/Footer.php
+# resources/views/components/footer.blade.php
+```
+
+```bash
+npm install p5
+npm install tweakpane
+```
