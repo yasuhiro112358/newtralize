@@ -18,11 +18,11 @@ const params = {
 };
 
 function showCatchCopy(p) {
-  let catchCopy = "Stay Neutral,\nBuild the Future";
+  let catchCopy = "Stay Neutral,\nBuild the New";
   let fontSize = 36;
 
   if (p.windowWidth > 640) {
-    catchCopy = "Stay Neutral, Build the Future";
+    catchCopy = "Stay Neutral, Build the New";
     fontSize = p.width * 0.05;
   }
 
@@ -82,7 +82,7 @@ const sketch = (p) => {
     for (let x = 0; x <= p.width + grid; x += grid) {
       for (let y = 0; y <= p.height + grid; y += grid) {
         // let noiseVal = p.noise(x * 0.010, y * 0.010, p.frameCount * 0.01); // 基本のノイズ値
-        let noiseVal = p.noise(x * 0.005, y * 0.005, p.frameCount * 0.005); // 基本のノイズ値
+        let noiseVal = p.noise(x * 0.005, y * 0.005, p.frameCount * 0.007); // 基本のノイズ値
         // let noiseVal = p.noise(x * 0.010, y * 0.010, p.frameCount * 0.005); // 基本のノイズ値
 
         // すべての影響ポイントの効果を適用
