@@ -32,7 +32,7 @@ function showCatchCopy(p) {
   p.fill(255); // 白色でテキストを描画
   p.stroke(127);
   p.strokeWeight(0);
-  p.text(catchCopy, centerX, centerY);
+  p.text(catchCopy, centerX, centerY - 64);
 }
 
 function showTweakpane() {
