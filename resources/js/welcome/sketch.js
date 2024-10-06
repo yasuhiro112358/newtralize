@@ -73,11 +73,17 @@ const sketch = (p) => {
     p.colorMode(p.HSB, 360, 100, 100, 255); // カラーモードをHSBに設定
     p.background(params.bgHue, params.bgSaturation, params.bgBrightness); // 背景色を設定
 
-    // 緩やかな振動を背景に追加
-    for (let x = 0; x <= p.width; x += 16) {
-      for (let y = 0; y <= p.height; y += 16) {
-        // let noiseVal = p.noise(x * 0.005, y * 0.005, p.frameCount * 0.01); // 基本のノイズ値
-        let noiseVal = p.noise(x * 0.010, y * 0.010, p.frameCount * 0.01); // 基本のノイズ値
+    // グリッドを描画
+    // const grid = 12;
+    // const grid = 16;
+    // const grid = 20;
+    const grid = 24;
+    // const grid = 36;
+    for (let x = 0; x <= p.width + grid; x += grid) {
+      for (let y = 0; y <= p.height + grid; y += grid) {
+        // let noiseVal = p.noise(x * 0.010, y * 0.010, p.frameCount * 0.01); // 基本のノイズ値
+        let noiseVal = p.noise(x * 0.005, y * 0.005, p.frameCount * 0.005); // 基本のノイズ値
+        // let noiseVal = p.noise(x * 0.010, y * 0.010, p.frameCount * 0.005); // 基本のノイズ値
 
         // すべての影響ポイントの効果を適用
         influencePoints.forEach(point => {
@@ -93,7 +99,7 @@ const sketch = (p) => {
         // p.fill(200, 60, 100, noiseVal * 255); // ノイズ値に応じて透明度を変化
         p.fill(params.waveHue, params.waveSaturation, params.waveBrightness, noiseVal * 255); // ノイズ値に応じて透明度を変化
         p.noStroke();
-        p.ellipse(x, y, 8 + noiseVal * 8);
+        p.ellipse(x, y, grid / 2 + noiseVal * grid / 2);
       }
     }
 
