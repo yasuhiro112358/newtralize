@@ -1,6 +1,7 @@
 {{-- <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"> --}}
 {{-- <nav x-data="{ open: false }" class="bg-blue-950 border-b border-gray-100 fixed w-full top-0 z-10"> --}}
-<nav x-data="{ open: false }" class="bg-blue-950 fixed w-full top-0 z-10 select-none">
+{{-- <nav x-data="{ open: false }" class="bg-blue-950 fixed w-full top-0 z-10 select-none"> --}}
+<nav x-data="{ open: false }" class="bg-blue-950  select-none">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- <div class="flex justify-between h-16"> --}}

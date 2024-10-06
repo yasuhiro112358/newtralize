@@ -13,20 +13,21 @@
 </head>
 
 <body class="font-sans antialiased">
-    {{-- <div class="min-h-screen bg-gray-100 dark:bg-gray-900"> --}}
-    {{-- <div class="min-h-screen bg-gray-100"> --}}
-    {{-- <div class="flex flex-col min-h-screen bg-gray-100"> --}}
-    <div class="flex flex-col h-screen bg-gray-100">
+    <div class="flex flex-col min-h-screen bg-gray-100">
         {{-- Navigation --}}
-        @include('layouts.navigation')
+        <div class="fixed w-full h-14 top-0 z-10">
+            @include('layouts.navigation')
+        </div>
 
         <!-- Content -->
-        <main class="flex-grow pt-12">
+        <main class="w-full flex-grow pt-14">
             @yield('content')
         </main>
 
         {{-- Footer --}}
-        <x-footer />
+        <div class="w-full h-10">
+            <x-footer />
+        </div>
     </div>
 
     <!-- Scripts -->

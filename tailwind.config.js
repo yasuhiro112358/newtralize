@@ -14,6 +14,9 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            height: {
+                'screen-minus-96': 'calc(100vh - 56px - 40px)',
+            },
         },
     },
 
