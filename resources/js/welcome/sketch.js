@@ -10,12 +10,30 @@ const p5Container = document.getElementById('p5-container');
 
 const params = {
   bgHue: 230,
-  bgSaturation: 70,
+  bgSaturation: 75,
   bgBrightness: 60,
   waveHue: 210,
-  waveSaturation: 60,
-  waveBrightness: 80,
+  waveSaturation: 55,
+  waveBrightness: 100,
 };
+
+function showCatchCopy(p) {
+  let catchCopy = "Stay Neutral,\nBuild the Future";
+  let fontSize = 36;
+
+  if (p.windowWidth > 640) {
+    catchCopy = "Stay Neutral, Build the Future";
+    fontSize = p.width * 0.05;
+  }
+
+  p.textSize(fontSize);
+  p.textAlign(p.CENTER, p.CENTER);
+  p.textStyle(p.BOLD);
+  p.fill(255); // 白色でテキストを描画
+  p.stroke(127);
+  p.strokeWeight(0);
+  p.text(catchCopy, centerX, centerY);
+}
 
 function showTweakpane() {
   // Tweakpaneの設定
@@ -47,7 +65,8 @@ const sketch = (p) => {
     centerX = p.width / 2;
     centerY = p.height / 2;
 
-    showTweakpane(); // show Tweakpane for development
+    // show Tweakpane for development
+    // showTweakpane();
   };
 
   p.draw = () => {
@@ -85,12 +104,21 @@ const sketch = (p) => {
         influencePoints.splice(i, 1); // 影響ポイントが消えたら削除
       }
     }
+
+    showCatchCopy(p);
   };
 
   // クリックした時に影響ポイントを追加
   p.mousePressed = () => {
     influencePoints.push(new InfluencePoint(p, p.mouseX, p.mouseY));
   };
+
+  p.windowResized = () => {
+    // ウィンドウサイズが変更されたときにキャンバスサイズを変更
+    p.resizeCanvas(p5Container.offsetWidth, p5Container.offsetHeight);
+    centerX = p.width / 2;
+    centerY = p.height / 2;
+  }
 };
 
 // 影響ポイントのクラス
