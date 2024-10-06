@@ -30,3 +30,8 @@ php artisan make:component Footer
 # app/View/Components/Footer.php
 # resources/views/components/footer.blade.php
 ```
+
+```bash
+npm install p5
+npm install tweakpane
+```
