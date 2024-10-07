@@ -14,7 +14,7 @@
                 </div>
 
                 <!-- Portfolio Items -->
-                <div class="grid grid-cols-1 gap-6 overflow-y-auto md:grid-cols-2 lg:grid-cols-2" style="max-height: 70vh;">
+                <div class="max-h-screen grid grid-cols-1 gap-6 overflow-y-scroll md:grid-cols-2 lg:grid-cols-2">
                     @php
                         $portfolioItems = [
                             [
@@ -69,16 +69,31 @@
                     @endphp
 
                     @foreach ($portfolioItems as $item)
-                        <x-portfolio-item :id="$item['id']" :image="$item['image']" :title="$item['title']" :description="$item['description']"
-                            :skills="$item['skills']" :note="$item['note']" :link="$item['link']" />
+                        <div class="h-[600px]">
+                            <x-portfolio-item :id="$item['id']" :image="$item['image']" :title="$item['title']" :description="$item['description']"
+                                :skills="$item['skills']" :note="$item['note']" :link="$item['link']" />
+                        </div>
                     @endforeach
                 </div>
             </div>
 
             <!-- Right column -->
-            <div class="lg:sticky lg:top-16">
-                <x-profile-card name="Yasuhiro W" description="Brief introduction about yourself."
-                    image="images/hiro.jpg" />
+            {{-- <div class="lg:sticky lg:top-32"> --}}
+            <div class="">
+                @php
+                    // Profile data
+                    $profiles = [
+                        [
+                            'id' => 1,
+                            'image' => 'images/hiro.jpg',
+                            'name' => 'Yasuhiro W',
+                            'description' =>
+                                "Freelancer / Web Developer / Translator (Japanese/English) / Master of Engineering\n\nIn graduate school, I developed a program to analyze building vibrations during earthquakes. Subsequently, I worked for a major Japanese railway company for seven years. After studying in Australia for one year, I made a career change to the IT industry.",
+                        ],
+                    ];
+                @endphp
+                {{-- Profile card --}}
+                <x-profile-card :profile="$profiles[0]" />
             </div>
         </div>
     </div>
