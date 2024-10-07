@@ -18,6 +18,46 @@
                     @php
                         $portfolioItems = [
                             [
+                                'id' => 'omotenaship',
+                                'image' => 'images/omotenaship.png',
+                                'title' => 'Omotenaship',
+                                'description' => 'Web App (in production)',
+                                'skills' =>
+                                    '[FE]: JavaScript, jQuery, Bootstrap, [BE]: PHP, Laravel, npm, Vite, OpenAI API, Google Cloud API, OpenWeatherMap API, [DB]: MySQL, [Infra]: Docker, AWS (EC2, RDS)',
+                                'note' => "[Sample Account]:\nUsername: user01, email: user01@sample.com, PW: 11111111",
+                                'link' => 'https://omotenaship.com/',
+                            ],
+                            [
+                                'id' => 'newtralize',
+                                'image' => 'images/newtralize.png',
+                                'title' => 'Newtralize website',
+                                'description' => 'Web App (in production)',
+                                'skills' =>
+                                    '[FE]: JavaScript, Tailwind CSS, p5.js, [BE]: PHP, Laravel, npm, Vite, [DB]: MySQL, [Infra]: Docker, AWS (EC2, RDS)',
+                                'note' => "This website",
+                                'link' => 'https://newtralize.com/',
+                            ],
+                            [
+                                'id' => 'docs-search',
+                                'image' => 'images/docs_search.png',
+                                'title' => 'DocsSearch',
+                                'description' => 'Google Chrome Extension (in production)',
+                                'skills' =>
+                                    'JavaScript, Tailwind CSS, npm, Vite',
+                                'note' => "Can search only within official documentations of each technology",
+                                'link' => 'https://chromewebstore.google.com/detail/docssearch/fkekhmafjhnpgakmdhnjigmmjmcjbgma?authuser=0&hl=en-AU',
+                            ],
+                            [
+                                'id' => 'portfolio-4',
+                                'image' => 'images/show-seismic-wave.png',
+                                'title' => 'Calculation API',
+                                'description' => 'Web API, Calculation for Architectural Structure (in development)',
+                                'skills' =>
+                                    '[Web server]: PHP, JavaScript, Tailwind CSS, Chart.js, Xserver, [API server]: Python, flask, pandas, Heroku, [Env] Docker',
+                                'note' => "Using two servers: Heroku for API server, Xserver for Web server",
+                                'link' => 'https://nabeyasu.com/architectual-structural-analysis/',
+                            ],
+                            [
                                 'id' => 'portfolio-3',
                                 'image' => 'images/portfolio-blog.png',
                                 'title' => 'Blog System',
@@ -27,16 +67,6 @@
                                 'note' =>
                                     "Feel free to touch it!\n[Username]: admin, [Password]: admin\nYou can create your own account as well!",
                                 'link' => 'https://nabeyasu.com/portfolio-blog/',
-                            ],
-                            [
-                                'id' => 'portfolio-4',
-                                'image' => 'images/show-seismic-wave.png',
-                                'title' => 'Calculation API',
-                                'description' => 'Web API, Calculation for Architectural Structure, Developing',
-                                'skills' =>
-                                    'Python, flask, pandas, REST API, PHP, MAMP, Docker, Heroku, JavaScript, Chart.js, HTML/CSS, Tailwind CSS',
-                                'note' => "Heroku for API server\nXserver for Web server",
-                                'link' => 'https://nabeyasu.com/architectual-structural-analysis/',
                             ],
                             [
                                 'id' => 'portfolio-2',
@@ -54,16 +84,7 @@
                                 'description' => 'Web Pages, Responsive Design',
                                 'skills' => 'HTML/CSS, JavaScript, Responsive Design, Git, GitHub',
                                 'note' => '',
-                                'link' => '/index.html',
-                            ],
-                            [
-                                'id' => 'portfolio-sample',
-                                'image' => '',
-                                'title' => 'Sample',
-                                'description' => 'Web Pages, Responsive Design',
-                                'skills' => 'HTML/CSS, JavaScript, Responsive Design, Git, GitHub',
-                                'note' => '',
-                                'link' => '',
+                                'link' => 'https://yasuhiro112358.github.io/',
                             ],
                         ];
                     @endphp
