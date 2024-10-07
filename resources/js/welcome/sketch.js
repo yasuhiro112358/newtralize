@@ -13,7 +13,7 @@ const params = {
   bgSaturation: 75,
   bgBrightness: 60,
   waveHue: 210,
-  waveSaturation: 55,
+  waveSaturation: 40,
   waveBrightness: 100,
 };
 
