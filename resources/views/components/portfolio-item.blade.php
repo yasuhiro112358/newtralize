@@ -1,4 +1,4 @@
-<div class="bg-white rounded-2xl overflow-hidden p-4 sm:p-6 shadow" id="{{ $id }}">
+<div class="w-full h-full bg-white rounded-2xl overflow-hidden p-4 sm:p-6 shadow" id="{{ $id }}">
     {{-- Image --}}
     <div class="overflow-hidden rounded-xl mb-4 shadow">
         <img class="w-full h-48 object-cover object-top" src="{{ asset($image) }}" alt="">
