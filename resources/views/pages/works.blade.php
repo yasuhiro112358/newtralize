@@ -53,7 +53,7 @@
                                 'title' => 'Calculation API',
                                 'description' => 'Web API, Calculation for Architectural Structure (in development)',
                                 'skills' =>
-                                    '[Web server]: PHP, JavaScript, Tailwind CSS, Chart.js, Xserver, [API server]: Python, flask, pandas, Heroku, [Env] Docker',
+                                    '[API server]: Python, Flask, pandas, Heroku, [Web server]: PHP, JavaScript, Bootstrap, Chart.js, Xserver, [Env] Docker',
                                 'note' => "Using two servers: Heroku for API server, Xserver for Web server",
                                 'link' => 'https://nabeyasu.com/architectual-structural-analysis/',
                             ],
@@ -63,7 +63,7 @@
                                 'title' => 'Blog System',
                                 'description' => 'Web App, Responsive Design',
                                 'skills' =>
-                                    'PHP, CRUD, mysqli, password_hash(), SQL, MySQL, MAMP, HTML/CSS, Tailwind CSS, Responsive Design',
+                                    'PHP, CRUD, mysqli, password_hash(), SQL, MySQL, MAMP, HTML/CSS, Bootstrap, Responsive Design',
                                 'note' =>
                                     "Feel free to touch it!\n[Username]: admin, [Password]: admin\nYou can create your own account as well!",
                                 'link' => 'https://nabeyasu.com/portfolio-blog/',
@@ -73,7 +73,7 @@
                                 'image' => 'images/coffee-bean.png',
                                 'title' => 'Retail Website',
                                 'description' => 'Web Page, Responsive Design',
-                                'skills' => 'HTML/CSS, Tailwind CSS, Responsive Design',
+                                'skills' => 'HTML/CSS, Bootstrap, Responsive Design',
                                 'note' => '',
                                 'link' => 'https://nabeyasu.com/portfolio-coffee-bean/',
                             ],
