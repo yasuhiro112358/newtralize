@@ -109,7 +109,7 @@
                             'image' => 'images/hiro.jpg',
                             'name' => 'Yasuhiro W',
                             'description' =>
-                                "Freelancer / Web Developer / Translator (Japanese/English) / Master of Engineering\n\nIn graduate school, I developed a program to analyze building vibrations during earthquakes. Subsequently, I worked for a major Japanese railway company for seven years. After studying in Australia for one year, I made a career change to the IT industry.",
+                                "Web Developer | Translator (Japanese|English) | Master of Engineering\n\nIn graduate school, I developed a program to analyze building vibrations during earthquakes. Subsequently, I worked for a major Japanese railway company for seven years. After studying in Australia for one year, I made a career change to the IT industry.",
                         ],
                     ];
                 @endphp
