@@ -29,7 +29,7 @@
                         Home
                     </x-nav-link>
                     <x-nav-link :href="route('works')" :active="request()->routeIs('works')">
-                        Works
+                        Portfolio
                     </x-nav-link>
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         About

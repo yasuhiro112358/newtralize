@@ -9,7 +9,7 @@
                 <!-- Portfolio heading-->
                 <div class="mb-4">
                     <div class="heading">
-                        <h1 class="text-3xl font-bold border-b-2 border-blue-950">Works</h1>
+                        <h1 class="text-3xl font-bold border-b-2 border-blue-950">Portfolio</h1>
                     </div>
                 </div>
 
