@@ -31,6 +31,9 @@
                     <x-nav-link :href="route('works')" :active="request()->routeIs('works')">
                         Portfolio
                     </x-nav-link>
+                    <x-nav-link :href="route('highlights')" :active="request()->routeIs('highlights')">
+                        Hightlights
+                    </x-nav-link>
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         About
                     </x-nav-link>
