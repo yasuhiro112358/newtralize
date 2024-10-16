@@ -1,8 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container w-full mx-auto px-4 py-8 md:w-1/2 lg:p-8">
-
+    <div class="container w-full mx-auto px-4 py-8 md:w-3/5 lg:p-8">
         {{-- About Newtralize --}}
         <div class="mb-8">
             <h1 class="text-3xl font-bold border-b-2 border-blue-950 mb-4">
