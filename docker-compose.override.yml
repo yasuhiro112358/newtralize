@@ -1,0 +1,5 @@
+services:
+  web:
+    environment:
+      APACHE_SERVER_NAME: localhost
+      DB_HOST: mysql
