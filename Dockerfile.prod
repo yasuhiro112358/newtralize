@@ -26,15 +26,23 @@ RUN cp .env.example .env
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+# Generate application key
+RUN php artisan key:generate
+
 # Install Node.js dependencies and build assets
 RUN npm install && npm run build
+
+# Set permissions for the application directory
+RUN chown -R apache:apache /var/www/newtralize && \
+    chmod -R 775 /var/www/newtralize/storage /var/www/newtralize/bootstrap/cache
+
+# Run database migrations and seeders
+# RUN php artisan migrate --force
+# RUN php artisan db:seed --force
 
 # Copy the start script
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
-
-# Set the document root
-RUN sed -i 's|DocumentRoot "/var/www/html"|DocumentRoot "/var/www/newtralize/public"|' /etc/httpd/conf/httpd.conf
 
 # Set ServerName directive
 RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
