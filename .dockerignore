@@ -6,7 +6,6 @@ vendor
 
 # Laravel environment files
 .env
-.env.*
 
 # IDE and editor files
 .vscode
