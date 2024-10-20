@@ -1,0 +1,50 @@
+FROM amazonlinux:2023
+
+WORKDIR /var/www/newtralize
+
+# Install necessary packages
+RUN dnf update -y
+RUN dnf install -y httpd
+RUN dnf install -y php php-cli php-fpm php-mysqlnd php-xml php-mbstring php-json php-common php-opcache php-pdo php-tokenizer php-zip
+RUN dnf install -y git
+RUN dnf install -y curl --allowerasing
+RUN dnf install -y procps
+RUN dnf clean all
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install Node.js and npm
+RUN curl -sL https://rpm.nodesource.com/setup_18.x | bash - && \
+    dnf install -y nodejs
+
+# Copy the Laravel application
+COPY . /var/www/newtralize
+
+# Copy the .env file
+RUN cp .env.example .env
+
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+# Install Node.js dependencies and build assets
+RUN npm install
+RUN npm run build
+
+# Generate application key
+RUN php artisan key:generate
+
+# Set permissions for the application directory
+RUN chown -R apache:apache /var/www/newtralize && \
+    chmod -R 775 /var/www/newtralize/storage /var/www/newtralize/bootstrap/cache
+
+# Copy the Apache configuration files
+COPY ./etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf
+COPY ./etc/httpd/conf.d/vhost.conf /etc/httpd/conf.d/vhost.conf
+
+# Copy the start script
+COPY ./usr/local/bin/start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
+# Start Apache
+CMD ["/usr/local/bin/start.sh"]
