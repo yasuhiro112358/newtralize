@@ -104,7 +104,7 @@ docker push 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com/newtralize-web:lat
 aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com
 
 # Pull the image from the repository
-docker pull 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com/newtralize:latest
+docker pull 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com/newtralize-web:latest
 
 # EC2に手動でファイルを設置
 # ~/newtralize/docker-compose.prod.yml
