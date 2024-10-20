@@ -1,7 +1,16 @@
 # newtralize
 
-## Development notes
+## デプロイの方針
+-   アクセスの流れ: HTTP(80) -> HTTPS(443) -> Docker(8080)
+-   Reverse Proxy で
+    http://newtralize.com:80 -> 
+    https://http://newtralize.com:443 -> 
+    http://localhost:8080 
+    にリダイレクトする
+-   Doker では http://localhost:8080 でアクセスできるものをつくる
 
+
+## Development notes
 ```bash
 # プロジェクトの作成
 curl -s https://laravel.build/newtralize | bash
@@ -27,7 +36,7 @@ php artisan cache:clear
 ```
 
 ```bash
-php artisan make:component Footer 
+php artisan make:component Footer
 # Create a new component class and view
 # app/View/Components/Footer.php
 # resources/views/components/footer.blade.php
@@ -38,8 +47,8 @@ npm install p5
 npm install tweakpane
 ```
 
-
 ## Development notes
+
 ```bash
 ssh -i ~/.ssh/id_rsa_aws ec2-user@18.183.87.224  # Connect to AWS EC2 instance
 ```
@@ -62,32 +71,34 @@ cp .env.example .env # .envファイルの作成
 vi .env # .envファイルの設定
 ```
 
-
 # 試行錯誤中
-### Docker imageでのデプロイ
+
+### Dockerでのデプロイ
+本番環境用のDockerfileを作成して行う
+Laravel Sailは開発環境専用
+
 ### ローカルでの操作
 ```bash
 # Build the image
-sail -f docker-compose.prod.yml build
-# contextは、./に変更
-# dockerfileは、docker/8.3/Dockerfile.prodに変更
+docker compose -f docker-compose.prod.yml build       
+# contextは、./に変更。ソースコードーをコピーするため
+# dockerfileは、prod用を指定
 # imageは、リポジトリ名/イメージ名:タグ名に変更
 # platformは、Amazon Linux 2023の場合はlinux/amd64に
 # volumeは、記述を削除する
-# アプリのファイルをコピーするために、COPY ../../ /var/www/htmlを追加
-# 環境変数を.env.productionから読み取るように設定
+# 環境変数を.env.prodから読み取るように設定
 
 # Create a repository
-aws ecr create-repository --repository-name newtralize 
+aws ecr create-repository --repository-name newtralize-web
 
 # Login to the repository
 aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com
 
 # Push the image to the repository
-docker push 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com/newtralize:latest
+docker push 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com/newtralize-web:latest
 ```
 
-### EC2での操作
+### EC2 での操作
 ```bash
 # Login to the repository from EC2
 aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com
@@ -98,12 +109,12 @@ docker pull 767397934648.dkr.ecr.ap-northeast-1.amazonaws.com/newtralize:latest
 # EC2に手動でファイルを設置
 # ~/newtralize/docker-compose.prod.yml
 # ~/newtralize/.env.prod
-# 必要に応じてportを変更
 
 # Run the image
-docker-compose -f docker-compose.prod.yml up -d --no-build # buildをスキップして実行
+docker-compose -f docker-compose.prod.yml up -d --no-build 
+# buildをスキップして実行
+# image nameをrepository名にしておくと、pullからしてくれる
 ```
-
 
 ```bash
 # リバースプロキシの設定
