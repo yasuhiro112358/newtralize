@@ -1,0 +1,34 @@
+# Node modules
+node_modules
+
+# Laravel vendor directory
+vendor
+
+# Laravel environment files
+.env
+.env.prod
+
+# IDE and editor files
+.vscode
+.idea
+
+# Logs and temporary files
+storage/framework/cache/*
+!storage/framework/cache/data
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+
+# Git files
+.git
+.gitignore
+
+# Docker files
+Dockerfile*
+docker-compose*
+
+# Other unnecessary files
+tests
+*.md
+*.log
+*.swp

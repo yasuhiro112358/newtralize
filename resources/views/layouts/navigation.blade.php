@@ -29,7 +29,10 @@
                         Home
                     </x-nav-link>
                     <x-nav-link :href="route('works')" :active="request()->routeIs('works')">
-                        Works
+                        Portfolio
+                    </x-nav-link>
+                    <x-nav-link :href="route('highlights')" :active="request()->routeIs('highlights')">
+                        Hightlights
                     </x-nav-link>
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         About
@@ -96,7 +99,10 @@
                 Home
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('works')" :active="request()->routeIs('works')">
-                Works
+                Portfolio
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('highlights')" :active="request()->routeIs('highlights')">
+                Highlights
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 About

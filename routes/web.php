@@ -11,6 +11,10 @@ Route::get('/works', function () {
     return view('pages.works');
 })->name('works');
 
+Route::get('/highlights', function () {
+    return view('pages.highlights');
+})->name('highlights');
+
 Route::get('/about', function () {
     return view('pages.about');
 })->name('about');

@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container w-full md:w-1/2 mx-auto px-4 py-8 lg:p-8">
+    <div class="container w-full md:w-3/5 mx-auto px-4 py-8 lg:p-8">
 
         <!-- Portfolio heading-->
         <h1 class="text-3xl font-bold border-b-2 border-blue-950 mb-4">

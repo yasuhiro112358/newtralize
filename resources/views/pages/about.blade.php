@@ -1,8 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container w-full mx-auto px-4 py-8 md:w-1/2 lg:p-8">
-
+    <div class="container w-full mx-auto px-4 py-8 md:w-3/5 lg:p-8">
         {{-- About Newtralize --}}
         <div class="mb-8">
             <h1 class="text-3xl font-bold border-b-2 border-blue-950 mb-4">
@@ -32,7 +31,7 @@
                         'image' => 'images/hiro.jpg',
                         'name' => 'Yasuhiro W',
                         'description' =>
-                            "Freelancer / Web Developer / Translator (Japanese/English) / Master of Engineering\n\nIn graduate school, I developed a program to analyze building vibrations during earthquakes. Subsequently, I worked for a major Japanese railway company for seven years. After studying in Australia for one year, I made a career change to the IT industry.",
+                            "Web Developer | Translator (Japanese|English) | Master of Engineering\n\nIn graduate school, I developed a program to analyze building vibrations during earthquakes. Subsequently, I worked for a major Japanese railway company for seven years. After studying in Australia for one year, I made a career change to the IT industry.",
                     ],
                 ];
             @endphp

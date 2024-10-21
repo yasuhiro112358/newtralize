@@ -9,7 +9,7 @@
                 <!-- Portfolio heading-->
                 <div class="mb-4">
                     <div class="heading">
-                        <h1 class="text-3xl font-bold border-b-2 border-blue-950">Works</h1>
+                        <h1 class="text-3xl font-bold border-b-2 border-blue-950">Portfolio</h1>
                     </div>
                 </div>
 
@@ -109,7 +109,7 @@
                             'image' => 'images/hiro.jpg',
                             'name' => 'Yasuhiro W',
                             'description' =>
-                                "Freelancer / Web Developer / Translator (Japanese/English) / Master of Engineering\n\nIn graduate school, I developed a program to analyze building vibrations during earthquakes. Subsequently, I worked for a major Japanese railway company for seven years. After studying in Australia for one year, I made a career change to the IT industry.",
+                                "Web Developer | Translator (Japanese|English) | Master of Engineering\n\nIn graduate school, I developed a program to analyze building vibrations during earthquakes. Subsequently, I worked for a major Japanese railway company for seven years. After studying in Australia for one year, I made a career change to the IT industry.",
                         ],
                     ];
                 @endphp
