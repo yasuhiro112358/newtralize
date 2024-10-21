@@ -8,3 +8,6 @@ php-fpm &
 
 # Start Apache in the foreground
 httpd -D FOREGROUND
+
+# Generate application key
+php artisan key:generate
