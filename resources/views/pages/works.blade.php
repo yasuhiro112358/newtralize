@@ -50,12 +50,12 @@
                             [
                                 'id' => 'portfolio-4',
                                 'image' => 'images/show-seismic-wave.png',
-                                'title' => 'Calculation API',
-                                'description' => 'Web API, Calculation for Architectural Structure (in development)',
+                                'title' => 'ArchStructAnalysis',
+                                'description' => 'SPA(Single Page Application), Calculation for Architectural Structure (in development)',
                                 'skills' =>
-                                    '[API server]: Python, Flask, pandas, Heroku, [Web server]: PHP, JavaScript, Bootstrap, Chart.js, Xserver, [Env] Docker',
-                                'note' => "Using two servers: Heroku for API server, Xserver for Web server",
-                                'link' => 'https://nabeyasu.com/architectual-structural-analysis/',
+                                    '[API]: Python, Flask, pandas, [Web]: JavaScript(Vanilla), Bootstrap, Chart.js, [Infra] Ubuntu, Apache2, uWSGI, Docker, AWS EC2',
+                                'note' => "API(BE) is by Python, Web(FE) is by JavaScript",
+                                'link' => 'https://arch-struct-analisis.newtralize.com/',
                             ],
                             [
                                 'id' => 'portfolio-3',
