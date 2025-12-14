@@ -12,8 +12,7 @@
     https://http://newtralize.com:443 -> 
     http://localhost:8080 
     にリダイレクトする
--   Doker では http://localhost:8080 でアクセスできるものをつくる
-
+-   Docker では http://localhost:8080 でアクセスできるものをつくる
 
 ## Development notes
 ```bash
@@ -157,11 +156,10 @@ sudo certbot --apache -d newtralize.com -d www.newtralize.com # SSL証明書の�
 # 設定は自動で行われる
 ```
 
-# 試行錯誤中
 
-### Dockerでのデプロイ
+## Dockerコンテナのデプロイ手順
 本番環境用のDockerfileを作成して行う
-Laravel Sailは開発環境専用
+（Laravel Sailは開発環境専用・・・コンテナ内へのファイルコピーがスムーズにできないなど調整が非常にしづらい）
 
 ### ローカルでの操作
 ```bash
@@ -202,6 +200,7 @@ docker-compose -f docker-compose.prod.yml up -d --no-build
 # image nameをrepository名にしておくと、pullからしてくれる
 ```
 
+## リバースプロキシの設定
 ```bash
 # リバースプロキシの設定
 # newtralize.comにリクエストがあった場合、localhost:8080にリダイレクトさせる
