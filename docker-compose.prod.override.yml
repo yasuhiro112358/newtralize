@@ -1,3 +1,4 @@
+# This file is used to override the docker-compose.prod.yml file for local testing
 services:
   web:
     platform: linux/arm64
